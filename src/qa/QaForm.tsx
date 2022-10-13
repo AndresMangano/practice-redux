@@ -28,6 +28,11 @@ export default function QaForm() {
     const handleOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         dispatch(addQA(qa.question, qa.answer))
+        setQa((prevState) => ({
+            ...prevState,
+            question: '',
+            answer: ''
+          }));
     }
 
     return(
